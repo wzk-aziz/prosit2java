@@ -18,7 +18,7 @@ public class Main {
         Zoo myZoo=new Zoo();
         myZoo.name = "National Zoo";
         myZoo.city = "TUNISIA";
-        myZoo.nbrCages = 20;
+        //myZoo.NBR_CAGES = 20;
         myZoo.animals = new Animal[25];
 
         Animal elephant=new Animal("elephant","elephants",10,true);
