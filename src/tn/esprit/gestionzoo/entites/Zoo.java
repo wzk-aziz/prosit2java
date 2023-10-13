@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2023 LaaroussiMedAziz
  *
@@ -8,12 +7,14 @@
  *  And remember to stay awesome!
  */
 
+package tn.esprit.gestionzoo.entites;
+
 public class Zoo {
-    String name;
-    String city;
+    private String name;
+    private String city;
     final int NBR_CAGES=25;
-    Animal[] animals;
-    int nbrAnimals;
+    private Animal[] animals;
+    private int nbrAnimals;
 
     public Zoo() {
     }
@@ -40,19 +41,28 @@ public class Zoo {
         return this.nbrAnimals == this.NBR_CAGES;
     }
 
-    void displayZoo() {
-        System.out.println("Zoo: " + name + ", " + city + ", " + NBR_CAGES);
+    public void displayZoo() {
+        System.out.println("tn.esprit.gestionzoo.entites.Zoo: " + name + ", " + city + ", " + NBR_CAGES);
     }
 
-    boolean addAnimal(Animal animal){
+  public boolean addAnimal(Animal animal){
+        if(isZooFull() && searchAnimal(animal)==-1){
+            animals[nbrAnimals] = animal;
+            nbrAnimals++;
+            return true;
+        }
+        return false;
+    }//instruction15
+
+  /*  boolean addAnimal(tn.esprit.gestionzoo.entites.Animal animal){
         if(nbrAnimals < NBR_CAGES && searchAnimal(animal) == -1){// Instruction 12
             animals[nbrAnimals] = animal;
             nbrAnimals++;
             return true;
         }
         return false;
-    }
-    boolean removeAnimal(Animal animal){
+    }*/
+    public boolean removeAnimal(Animal animal){
         int index = searchAnimal(animal);
         if(index != -1){
             for (int i = index; i < nbrAnimals - 1; i++) {
@@ -65,14 +75,14 @@ public class Zoo {
             return false;
         }
     }
-    void displayAnimals(){
+   public void displayAnimals(){
         for(int i = 0; i < nbrAnimals; i++){
             System.out.println(animals[i]);
         }
     }
 
     // Instruction 11
-    int searchAnimal(Animal animal){
+   public int searchAnimal(Animal animal){
         for(int i = 0; i < nbrAnimals; i++){
             if(animals[i].equals(animal)){
                 return i;
@@ -81,12 +91,51 @@ public class Zoo {
         return -1;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public int getNBR_CAGES() {
+        return NBR_CAGES;
+    }
+
+    public Animal[] getAnimals() {
+        return animals;
+    }
+
+    public int getNbrAnimals() {
+        return nbrAnimals;
+    }
+
+    public void setName(String name) {
+        if(name.isEmpty())
+        this.name = name;
+        else
+            System.out.println("le nom ne doit pas etre vide");
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+
+    public void setNbrAnimals(int nbrAnimals) {
+        this.nbrAnimals = nbrAnimals;
+    }
+
     @Override
     public String toString() {
-        return "Zoo{" +
+        return "tn.esprit.gestionzoo.entites.Zoo{" +
                 "name='" + name + '\'' +
                 ", city='" + city + '\'' +
                 ", NBR_CAGES=" + NBR_CAGES +
                 '}';
     }
+
+
+
 }
