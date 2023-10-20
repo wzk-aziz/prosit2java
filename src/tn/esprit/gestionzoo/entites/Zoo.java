@@ -16,6 +16,10 @@ public class Zoo {
     private Animal[] animals;
     private int nbrAnimals;
 
+    private Aquatic[] aquaticAnimals;
+    private  int nbrAquaticAnimals;
+    private final int maxAquaticAnimals=10;
+
     public Zoo() {
     }
 
@@ -90,7 +94,14 @@ public class Zoo {
         }
         return -1;
     }
+    //instruction 26
 
+    public void addAquaticAnimal(Aquatic aquatic){
+        if(nbrAquaticAnimals < maxAquaticAnimals){
+            aquaticAnimals[nbrAquaticAnimals] = aquatic;
+            nbrAquaticAnimals++;
+        }
+    }
     public String getName() {
         return name;
     }
@@ -127,6 +138,29 @@ public class Zoo {
         this.nbrAnimals = nbrAnimals;
     }
 
+
+    public float maxPenguinSwimmingDepth(){
+        float maxDepth = 0;
+        for(int i = 0; i < nbrAquaticAnimals; i++){
+            if(aquaticAnimals[i] instanceof Penguin){
+                if(((Penguin) aquaticAnimals[i]).getSwimmingDepth() > maxDepth)
+                    maxDepth = ((Penguin) aquaticAnimals[i]).getSwimmingDepth();
+            }
+        }
+        return maxDepth;
+    }
+
+    public void displayNumberOfAquaticsByType(){
+        int nbrPenguins = 0, nbrDolphins = 0;
+        for(int i = 0; i < nbrAquaticAnimals; i++){
+            if(aquaticAnimals[i] instanceof Penguin)
+                nbrPenguins++;
+            if(aquaticAnimals[i] instanceof Dolphin)
+                nbrDolphins++;
+        }
+        System.out.println("Penguins: " + nbrPenguins);
+        System.out.println("Dolphins: " + nbrDolphins);
+    }
     @Override
     public String toString() {
         return "tn.esprit.gestionzoo.entites.Zoo{" +
