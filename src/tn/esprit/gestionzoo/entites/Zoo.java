@@ -149,7 +149,7 @@ public class Zoo {
         }
         return maxDepth;
     }
-
+//instruction 29
     public void displayNumberOfAquaticsByType(){
         int nbrPenguins = 0, nbrDolphins = 0;
         for(int i = 0; i < nbrAquaticAnimals; i++){

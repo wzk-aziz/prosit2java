@@ -57,7 +57,7 @@ public abstract non-sealed class Aquatic extends Animal {
         return this.getName().equals(other.getName()) && this.getAge() == other.getAge() && habitat.equals(other.habitat);
     }*/
 
-// instruction 30
+// instruction 31
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

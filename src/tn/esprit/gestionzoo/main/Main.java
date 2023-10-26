@@ -63,7 +63,7 @@ public class Main {
        // aquatic.swim();
         dolphin.swim();
         penguin.swim();
-
+        penguin.swim();
         myZoo.addAquaticAnimal(dolphin);
         myZoo.addAquaticAnimal(penguin);
     }
