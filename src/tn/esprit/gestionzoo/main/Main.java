@@ -9,7 +9,8 @@
 
 package tn.esprit.gestionzoo.main;
 
-import tn.esprit.gestionzoo.entites.*;
+import tn.esprit.gestionzoo.entites.Animal;
+import tn.esprit.gestionzoo.entites.Zoo;
 
 public class Main {
     public static void main(String[] args) {
@@ -52,19 +53,11 @@ public class Main {
         System.out.println("-------------------------addaligator2-------------------------");
         System.out.println(myZoo.addAnimal(alligator));
         System.out.println("-------------------------displayanimal-------------------------");
-        myZoo.displayAnimals();
+myZoo.displayAnimals();
+
+
         System.out.println(myZoo.searchAnimal(lion));
 
-        //instruction 21
-        //Aquatic aquatic = new Aquatic("fish", "dorry", 3, false, "Ocean");
-        Terrestrial terrestrial = new Terrestrial("Lion", "Simba", 3, true, 4);
-        Dolphin dolphin = new Dolphin("dolphins", "doffy", 5, true, "Ocean", 0.5f);
-        Penguin penguin = new Penguin("penguins", "Cesar", 5, true, "Ocean", 0.5f);
-       // aquatic.swim();
-        dolphin.swim();
-        penguin.swim();
-        penguin.swim();
-        myZoo.addAquaticAnimal(dolphin);
-        myZoo.addAquaticAnimal(penguin);
+
     }
 }

@@ -9,9 +9,13 @@
 
 package tn.esprit.gestionzoo.entites;
 
+<<<<<<< HEAD
 import java.util.Objects;
 
 public abstract non-sealed class Aquatic extends Animal {
+=======
+public non-sealed class Aquatic extends Animal {
+>>>>>>> origin/master
 
     private String habitat;
 
@@ -39,6 +43,7 @@ public abstract non-sealed class Aquatic extends Animal {
     }
 
     //on peut herité un methode de la class mére dans la classe fille meme si elle est private
+<<<<<<< HEAD
     /*public void swim(){
         System.out.println("this aquatic animal is swimming");
     }*/
@@ -72,6 +77,11 @@ public abstract non-sealed class Aquatic extends Animal {
                 Objects.equals(getHabitat(), other.getHabitat());
     }
 
+=======
+    public void swim(){
+        System.out.println("this aquatic animal is swimming");
+    }
+>>>>>>> origin/master
     @Override
     public String toString() {
         return "Aquatic{" +
