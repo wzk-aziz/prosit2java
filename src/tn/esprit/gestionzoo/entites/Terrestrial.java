@@ -10,16 +10,10 @@
 package tn.esprit.gestionzoo.entites;
 
 public final class Terrestrial extends Animal {
+
     private int nbrLegs;
 
-
-    public Terrestrial()
-    {
-
-    }
-
-    public Terrestrial(int nbrLegs) {
-        this.nbrLegs = nbrLegs;
+    public Terrestrial() {
     }
 
     public Terrestrial(String family, String name, int age, boolean isMammal, int nbrLegs) {
@@ -27,18 +21,8 @@ public final class Terrestrial extends Animal {
         this.nbrLegs = nbrLegs;
     }
 
-    public int getNbrLegs() {
-        return nbrLegs;
-    }
-
-    public void setNbrLegs(int nbrLegs) {
-        this.nbrLegs = nbrLegs;
-    }
-
     @Override
     public String toString() {
-        return "Terrestrial{" +
-                "nbrLegs=" + nbrLegs +
-                '}';
+        return super.toString() + ", nbrLegs:" + nbrLegs;
     }
 }

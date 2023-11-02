@@ -9,41 +9,33 @@
 
 package tn.esprit.gestionzoo.entites;
 
-public non-sealed class Aquatic extends Animal {
+public abstract non-sealed class Aquatic extends Animal {
 
-    private String habitat;
+    protected String habitat;
 
-    public Aquatic()
-    {
-
-    }
-    public Aquatic(String habitat) {
-        this.habitat = habitat;
+    public Aquatic() {
     }
 
     public Aquatic(String family, String name, int age, boolean isMammal, String habitat) {
-
         super(family, name, age, isMammal);
-
         this.habitat = habitat;
     }
 
-    public String getHabitat() {
-        return habitat;
-    }
 
-    public void setHabitat(String habitat) {
-        this.habitat = habitat;
-    }
+    public abstract void swim();
 
-    //on peut herité un methode de la class mére dans la classe fille meme si elle est private
-    public void swim(){
-        System.out.println("this aquatic animal is swimming");
-    }
     @Override
     public String toString() {
-        return "Aquatic{" +
-                "habitat='" + habitat + '\'' +
-                '}';
+        return super.toString() + ", habitat:" + habitat;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) return true;
+        if (obj == null) return false;
+        if (obj instanceof Aquatic aquatic) {
+            return aquatic.habitat.equals(habitat) && aquatic.getName().equals(super.getName()) && aquatic.getAge() == super.getAge();
+        }
+        return false;
     }
 }
